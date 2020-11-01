@@ -1,26 +1,32 @@
+import { useObserver } from 'mobx-react';
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import CounterComponent from './counter/component';
+import { useCounterStore } from './counter/context';
+import NewNoteForm from './note/NewNoteForm';
+import { useNoteStore } from './note/NotesContext';
+import SimpleCounter from './SimpleCounter';
 
 function App() {
+  // const noteStore = useNoteStore();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <CounterComponent />
+  )
+
+  // return useObserver( () =>
+  //   <SimpleCounter />
+  // );
+  // return useObserver( () => 
+  //   <>
+  //     <ul>
+  //       {noteStore().notes.map((note, idx) => 
+  //         <li key={idx}>{note}</li>
+  //       )}
+  //     </ul>
+  //     <NewNoteForm />
+  //   </>
+  // );
 }
 
 export default App;
