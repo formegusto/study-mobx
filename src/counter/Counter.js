@@ -1,23 +1,16 @@
-import { action, makeObservable, observable } from 'mobx';
+import { action, observable } from 'mobx';
 import { observer } from 'mobx-react';
 import React, { Component } from 'react';
 
 class Counter extends Component {
-    number = 0;
+    @observable number = 0;
 
-    constructor() {
-        super()
-        makeObservable(this, {
-            number: observable,
-            increase: action,
-            decrease: action
-        })
-    }
-
+    @action
     increase = () => {
         this.number++;
     }
 
+    @action
     decrease = () => {
         this.number--;
     }
@@ -33,4 +26,4 @@ class Counter extends Component {
     }
 }
 
-export default observer(Counter);
+export default Counter;
