@@ -1,5 +1,6 @@
 import React from 'react';
 import DecoCounter from './counter/DecoCounter';
+import StoreCounter from './counter/StoreCounter';
 import UnDecoCounter from './counter/UnDecoCounter';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div>
       <DecoCounter/>
       <UnDecoCounter />
+      <StoreCounter />
     </div>
   );
 }
