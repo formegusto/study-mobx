@@ -1,5 +1,6 @@
 import React from 'react';
 import DecoCounter from './counter/DecoCounter';
+import SpecificStoreCounter from './counter/SpecificStoreCounter';
 import StoreCounter from './counter/StoreCounter';
 import UnDecoCounter from './counter/UnDecoCounter';
 
@@ -9,6 +10,7 @@ function App() {
       <DecoCounter/>
       <UnDecoCounter />
       <StoreCounter />
+      <SpecificStoreCounter />
     </div>
   );
 }
