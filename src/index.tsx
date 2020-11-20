@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import CounterStore from './stores/CounterStore';
 
-// Store Model
+// Store Mobx
 const counter = new  CounterStore();
 
 ReactDOM.render(
