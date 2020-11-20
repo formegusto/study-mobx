@@ -1,16 +1,18 @@
 import React from 'react';
-import DecoCounter from './counter/DecoCounter';
-import SpecificStoreCounter from './counter/SpecificStoreCounter';
-import StoreCounter from './counter/StoreCounter';
-import UnDecoCounter from './counter/UnDecoCounter';
+import SuperMarketContainer from './superMarket/containers/SuperMarketContainer';
+// import DecoCounter from './counter/DecoCounter';
+// import SpecificStoreCounter from './counter/SpecificStoreCounter';
+// import StoreCounter from './counter/StoreCounter';
+// import UnDecoCounter from './counter/UnDecoCounter';
 
 function App() {
   return (
     <div>
-      <DecoCounter/>
+      {/* <DecoCounter/>
       <UnDecoCounter />
       <StoreCounter />
-      <SpecificStoreCounter />
+      <SpecificStoreCounter /> */}
+      <SuperMarketContainer />
     </div>
   );
 }
