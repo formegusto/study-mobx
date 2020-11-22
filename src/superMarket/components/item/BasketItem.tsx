@@ -3,12 +3,13 @@ import { Basket } from '../../types';
 import '../../styles/styles.css';
 
 type Props = {
-    basket: Basket;
+    basket: Basket,
+    onTake: (name:string) => void,
 }
 
-function BasketItem ({ basket } : Props) {
+function BasketItem ({ basket, onTake } : Props) {
     return (
-        <div className="BasketItem">
+        <div className="BasketItem" onClick={(e) => onTake(basket.item.name)}>
           <div className="name">{basket.item.name}</div>
           <div className="price">{basket.item.price}원</div>
           <div className="count">{basket.count}</div>
