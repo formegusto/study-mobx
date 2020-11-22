@@ -1,6 +1,7 @@
 import React from 'react';
 import { Basket } from '../../types';
 import '../../styles/styles.css';
+import { observer } from 'mobx-react';
 
 type Props = {
     basket: Basket,
@@ -18,4 +19,4 @@ function BasketItem ({ basket, onTake } : Props) {
     );
 }
 
-export default BasketItem;
+export default observer(BasketItem);

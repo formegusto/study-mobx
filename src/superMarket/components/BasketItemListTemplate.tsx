@@ -4,14 +4,14 @@ import BasketItem from './item/BasketItem';
 import '../styles/styles.css';
 import MarketStore from '../../stores/MarketStore';
 import { inject, observer } from 'mobx-react';
+import TotalPriceTemplate from './TotalPriceTemplate';
 
 type Props = {
     baskets?: Basket[],
-    total?: () => number,
     onTake?: (name: string) => void,
 }
 
-function BasketItemListTemplate({ baskets, total, onTake } : Props) {
+function BasketItemListTemplate({ baskets, onTake } : Props) {
     return (
         <div className="basket-wrapper">
                 <h2>장바구니</h2>
@@ -19,10 +19,7 @@ function BasketItemListTemplate({ baskets, total, onTake } : Props) {
                     <BasketItem basket={item} key={idx} onTake={onTake!}/>
                 ))}
                 <hr/>
-                <p>
-                    <b>총합: </b> 
-                    {total!}원
-                </p>
+                <TotalPriceTemplate />
         </div>
     );
 }
