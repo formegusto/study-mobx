@@ -15,7 +15,7 @@ function ShopItemListTemplate({ items, onPut } : Props) {
         <div className="items-wrapper">
                 <h2>상품</h2>
                 {items!.map((item, idx) => (
-                    <ShopItem item={item} key={idx} onPut={onPut}/>
+                    <ShopItem item={item} key={idx} onPut={onPut!}/>
                 ))}
         </div>
     )
@@ -26,5 +26,5 @@ type InjectProps = {
 }
 
 export default inject(({market} : InjectProps) => ({
-    onPut: market?.put
+    onPut: market!.put
 }))(observer(ShopItemListTemplate));

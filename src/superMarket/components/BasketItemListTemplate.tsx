@@ -6,16 +6,16 @@ import MarketStore from '../../stores/MarketStore';
 import { inject, observer } from 'mobx-react';
 
 type Props = {
-    items?: Basket[],
+    baskets?: Basket[],
     total?: () => number,
     onTake?: (name: string) => void,
 }
 
-function BasketItemListTemplate({ items, total, onTake } : Props) {
+function BasketItemListTemplate({ baskets, total, onTake } : Props) {
     return (
         <div className="basket-wrapper">
                 <h2>장바구니</h2>
-                {items!.map((item, idx) => (
+                {baskets!.map((item, idx) => (
                     <BasketItem basket={item} key={idx} onTake={onTake!}/>
                 ))}
                 <hr/>
@@ -32,7 +32,7 @@ type InjectProps = {
 }
 
 export default inject(({market} : InjectProps) => ({
-    items: market!.selectedItems,
+    baskets: market!.selectedItems,
     total: market!.total,
     onTake: market!.take,
 }))(observer(BasketItemListTemplate));

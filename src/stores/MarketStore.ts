@@ -1,8 +1,14 @@
 import { action, computed, observable } from "mobx";
 import { Basket } from "../superMarket/types";
+import RootStore from './index';
 
 export default class MarketStore {
     @observable selectedItems: Basket[] = [];
+    root : RootStore;
+
+    constructor(root: RootStore) {
+        this.root = root;
+    }
 
     @action
     put = (name : string, price : number): void => {
@@ -16,22 +22,22 @@ export default class MarketStore {
                     name,
                     price
                 },
-                count: 0
+                count: 1
             });
             return;
         }
 
         // 존재 한다면 count 값만 올린다.
-        exists.count++;
+        exists.count = exists.count + this.root.counter.number;
     }
 
     @action
     take = (name: string): void => {
         const itemToTake = this.selectedItems.find(item => item.item.name === name);
         itemToTake!.count--;
-        if(itemToTake?.count === 0) {
+        if(itemToTake!.count === 0) {
             //갯수가 0이면
-            const removeIdx: number = this.selectedItems.indexOf(itemToTake);
+            const removeIdx: number = this.selectedItems.indexOf(itemToTake!);
             this.selectedItems.splice(removeIdx, 1);
         }
     }

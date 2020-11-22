@@ -9,7 +9,7 @@ type Props = {
 
 function BasketItem ({ basket, onTake } : Props) {
     return (
-        <div className="BasketItem" onClick={(e) => onTake(basket.item.name)}>
+        <div className="BasketItem" onClick={(e) => onTake!(basket.item.name)}>
           <div className="name">{basket.item.name}</div>
           <div className="price">{basket.item.price}원</div>
           <div className="count">{basket.count}</div>

@@ -3,15 +3,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import CounterStore from './stores/CounterStore';
-import MarketStore from './stores/MarketStore';
+import RootStore from './stores';
 
 // Store Mobx
-const counter = new  CounterStore();
-const market = new MarketStore();
+// const counter = new  CounterStore();
+// const market = new MarketStore();
+const root = new RootStore();
 
 ReactDOM.render(
-  <Provider counter={counter} market={market}>
+  <Provider {...root}>
     <App />
   </Provider>,
   document.getElementById('root')

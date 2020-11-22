@@ -2,7 +2,7 @@ import { action, observable } from "mobx";
 
 export default class CounterStore {
     @observable
-    number: number = 0;
+    number: number = 2;
 
     @action
     increase = ():void => {
