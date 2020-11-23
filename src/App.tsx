@@ -4,6 +4,7 @@ import SuperMarketContainer from './superMarket/containers/SuperMarketContainer'
 import SpecificStoreCounter from './counter/SpecificStoreCounter';
 // import StoreCounter from './counter/StoreCounter';
 // import UnDecoCounter from './counter/UnDecoCounter';
+import DevTools from 'mobx-react-devtools';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <SpecificStoreCounter />
       <hr/>
       <SuperMarketContainer />
+      <DevTools />
     </div>
   );
 }
